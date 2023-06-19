@@ -424,7 +424,7 @@ class AppleBooks(object):
             id=row['ZANNOTATIONUUID'],
             asset_id=row['ZANNOTATIONASSETID'],
             creator_identifier=row['ZANNOTATIONCREATORIDENTIFIER'],
-            location=EpubCFI(row['ZANNOTATIONLOCATION']),
+            location=EpubCFI(row['ZANNOTATIONLOCATION']) if row['ZANNOTATIONLOCATION'] is not None else EpubCFI('epubcfi(/0)'),
             note=row['ZANNOTATIONNOTE'],
             representative_text=row['ZANNOTATIONREPRESENTATIVETEXT'],
             selected_text=row['ZANNOTATIONSELECTEDTEXT'],
